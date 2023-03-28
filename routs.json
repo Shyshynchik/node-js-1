@@ -1,0 +1,85 @@
+{
+  "/get": {
+    "method": [
+      "GET"
+    ],
+    "return": "GET is OK",
+    "status": 200
+  },
+  "/post": {
+    "method": [
+      "POST"
+    ],
+    "return": "POST is OK",
+    "status": 200
+  },
+  "/test": {
+    "method": [
+      "POST",
+      "GET"
+    ],
+    "return": "TEST is OK",
+    "status": 200
+  },
+  "/env": {
+    "method": [
+      "GET"
+    ],
+    "return": "ENV is OK",
+    "status": 200,
+    "function": "printEnv"
+  },
+  "/header": {
+    "method": [
+      "GET"
+    ],
+    "return": "HEADER is OK",
+    "status": 200,
+    "function": "addHeader",
+    "header": [
+      [
+        "Allow",
+        "GET"
+      ],
+      [
+        "Content-Type",
+        "text/html;charset=windows-1251"
+      ]
+    ]
+  },
+  "/set-cookie": {
+    "method": [
+      "GET"
+    ],
+    "return": "SET COOKIE is OK",
+    "status": 200,
+    "function": "setCookie",
+    "cookie": [
+      [
+        "cookieName",
+        "cookieValue"
+      ],
+      [
+        "anotherCookie",
+        "anotherCookieValue"
+      ]
+    ]
+  },
+  "/get-cookie": {
+    "method": [
+      "GET"
+    ],
+    "return": "GET COOKIE is OK",
+    "status": 200,
+    "function": "getCookie"
+  },
+  "/redirect": {
+    "method": [
+      "GET"
+    ],
+    "return": "REDIRECT is OK",
+    "status": 301,
+    "function": "redirect",
+    "redirect-url": "/get"
+  }
+}
